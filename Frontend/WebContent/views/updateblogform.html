@@ -1,0 +1,12 @@
+<span style="color:red">{{error.message}}</span>
+<form >
+<pre>
+Enter Blog Title : 
+<textarea type="text" ng-model="blogPost.blogTitle"  cols="90"></textarea>
+Enter Blog Content: 
+<textarea rows="5" cols="90" ng-model="blogPost.blogContent"></textarea>
+
+<button class="btn btn-lg btn-info" ng-click="updateBlog(blogPost)">Update Blog</button>
+</pre>
+</form>
+

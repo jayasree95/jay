@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   <span style="color:red">{{error.message}}</span>
+<form>
+<pre>
+Enter email:<input type="email" ng-model="user.email"><br>
+Enter password : <input type="password" ng-model="user.password"><br>
+<button ng-click="login(user)">Sign In</button>
+</pre>
+</form>
+</body>
+</html>

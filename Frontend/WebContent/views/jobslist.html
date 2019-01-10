@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="panel panel-info">
+   <div class="panel-heading">
+			<b>Job Details</b>
+		</div>
+		<div class="panel-body">
+			<ul style="list-style:none">
+				<li ng-repeat="job in jobs"><!-- jobs is $scope variable  -->  
+				<b>Job Title:{{job.jobTitle}}</b><br>
+				<b>Skills Required:{{job.skillsRequired}}</b><br>
+				<b>Yrs of Exp:{{job.yrsOfExp}}</b><br>
+				<!--  
+				<b>job.id=</b>{{job.id}}<br>
+				<b>$scope variable jobId  is </b> {{jobId}}<br><br>
+				<b>$scope variable showJobDetails</b>{{showJobDetails}}<br>
+				<b>job.id==jobId {{job.id==jobId}}</b><br>
+				-->
+				<div ng-show="showJobDetails && job.id==jobId">
+				<b>Description:</b><br>
+				&nbsp;&nbsp;{{job.description}}<br>
+				<b>Location</b><br>
+				&nbsp;&nbsp;{{job.location}}<br>
+				<b>Salary</b><br>
+				&nbsp;&nbsp;{{job.salary}}
+				</div>
+				<!--   !(showJobDetails && job.id==jobId)
+				       !(false  && false)
+				        !(false)
+				       -> true
+				  -->
+				<a ng-click="setValue(job.id)" ng-show="!(showJobDetails && job.id==jobId) ">Show details</a><br>
+				<a ng-click="setValue(job.id)" ng-show="showJobDetails && job.id==jobId">Hide details</a><br>
+				
+				<a ng-show="user.role=='ADMIN'" ng-click="deleteJob(job.id)"><span class="glyphicon glyphicon-trash"></span></a>
+				 <hr>
+				</li>  
+			</ul>
+		</div>
+	</div>
+
+
+
+</div>

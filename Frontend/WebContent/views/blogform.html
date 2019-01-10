@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+     <span style="color:red">{{error.message}}</span>
+<form >
+<pre>
+Enter Blog Title : 
+<textarea type="text" ng-model="blog.blogTitle"  cols="90"></textarea>
+Enter Blog Content: 
+<textarea rows="5" cols="90" ng-model="blog.blogContent"></textarea>
+
+<button class="btn btn-lg btn-info" ng-click="addBlog(blog)">Post Blog</button>
+</pre>
+</form>
+</body>
+</html>

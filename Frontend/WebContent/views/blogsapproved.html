@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+     <div class="panel panel-info">
+	<div class="panel-heading">
+		<h4>Blogs Approved</h4>
+	</div>
+	<div class="panel-body">
+	<span ng-show="blogsApproved.length==0">No Blogs Approved</span>
+		<ul style="list-style: none">
+			<li ng-repeat="blog in blogsApproved">
+			<pre>
+		    <a href="#/getblogapproved/{{blog.blogPostId}}"><b>Blog Title: </b>{{blog.blogTitle}}</a>
+			<b>Posted On :  </b>{{blog.postedOn | date:'DD-MMMM-yyyy'}}
+			<b>Posted By : </b> {{blog.postedBy.firstname}} &nbsp; {{blog.postedBy.lastname}}
+			<b>Email     :   </b> {{blog.postedBy.email}}
+			</pre>
+			<hr>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

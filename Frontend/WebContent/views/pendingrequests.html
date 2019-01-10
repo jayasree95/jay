@@ -1,0 +1,16 @@
+<div class="container">
+<div ng-show="pendingrequests.length==0">
+<h3>No Pending Requests</h3>
+</div>
+<ul style="list-style:none;">
+<li ng-repeat="request in    pendingrequests"><!-- request variable refers to Friend obj  -->
+{{request.fromId.email}}<br>
+{{request.fromId.firstname}}&nbsp;{{request.fromId.lastname}}<br>
+<img src="http://localhost:8084/middleware/getimage?email={{request.fromId.email}}" alt="No Image" height="60px" width="50px">
+<button class="btn btn-primary" ng-click="acceptRequest(request)">Accept</button> &nbsp; 
+<!-- request has {friendid,fromId,toId,status } -->
+<button class="btn btn-danger" ng-click="deleteRequest(request)">Delete</button>
+<hr>
+</li>
+</ul>
+</div>

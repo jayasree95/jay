@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+      <span ng-show="user.role!='ADMIN'">You are not authorized to view
+	this content</span>
+<div class="panel panel-info" ng-show="user.role=='ADMIN'">
+	<div class="panel-heading">
+		<h4>Blogs Waiting For Approval</h4>
+	</div>
+	<div class="panel-body">
+	<span ng-show="blogs.length==0">No blogs waiting for approval</span>
+		<ul style="list-style: none">
+			<li ng-repeat="blog in blogs">
+		    <a href="#/getblogwaitingforapproval/{{blog.blogPostId}}" ><b>Blog Title: </b>{{blog.blogTitle}}</a><br>
+			<b>Posted On :  </b>{{blog.postedOn | date:'dd-MMMM-yyyy'}}<br>
+			<b>Posted By : </b> {{blog.postedBy.firstname}} &nbsp; {{blog.postedBy.lastname}}<br>
+			<b>Email     :   </b> {{blog.postedBy.email}}<br>
+			<hr>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+      
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="container">
+<div class="panel panel-info">
+<div class="panel-heading">
+<h4>Friends</h4>
+</div>
+<div class="panel-body">
+<ul style="list-style:none">
+<li ng-repeat="user in friends"><!-- friends is an Array of User object -->
+{{user.email}}<br>
+{{user.firstname}}&nbsp;{{user.lastname}}<br>
+{{user.phonenumber}}<br>
+<img src="http://localhost:8084/middleware/getimage?email={{user.email}}" alt="No Image" height="60px" width="60px">
+<br>
+<a ng-click="getMutualFriends(user.email)">Get Mutual Friends</a><br>
+<div ng-show="user.email==forUser">Mutual Friends ({{mutualfriends.length}})<br>
+    <ul style="list-style:none">
+      <li ng-repeat="mutualfriend in mutualfriends">
+      {{mutualfriend.email}}
+       </li>
+    </ul>
+    </div>
+<hr>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
